@@ -29,6 +29,23 @@ public class DogsRepositoryStub implements DogsRepository {
         return result;
     }
 
+    public Dog getDogByName(String dogName) {
+        ArrayList<Dog> result = new ArrayList<>();
+
+        for( Dog theDog: itsDogs)
+            if( theDog.getName().equalsIgnoreCase(dogName) ) {
+                result.add(theDog);
+            }
+
+        if (result.size() > 1 || result.isEmpty()) {
+            return null;
+        }
+
+
+
+        return result.get(0);
+    }
+
     @Override
     public List<Dog> findByName(Dog aDog) {
         ArrayList<Dog> result = new ArrayList<>();
