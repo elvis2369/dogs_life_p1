@@ -56,6 +56,19 @@ class DogsRepositoryStubTest {
         Dog actualDog = dogsList.getDogByID(1);
         assertEquals(expectedDog.getId(), actualDog.getId());
     }
+
+    @Test
+    @DisplayName("Test updateDogDetails")
+    void updateDogDetails() {
+        Dog changeDog = new Dog();
+        changeDog.setName("X");
+        changeDog.setId(1);
+
+        long id = dogsList.updateDogDetails(changeDog);
+
+        assertEquals(changeDog.getId(), id);
+    }
+
     @Test
     void add_dog() {
         // arrange
