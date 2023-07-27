@@ -20,8 +20,8 @@ public class DogsRepositoryStub implements DogsRepository {
     public Dog findById(long id) {
         Dog result = null;
 
-        for( Dog theDog: itsDogs)
-            if(theDog.getId() == id ) {
+        for (Dog theDog : itsDogs)
+            if (theDog.getId() == id) {
                 result = theDog;
                 break;
             }
@@ -32,8 +32,8 @@ public class DogsRepositoryStub implements DogsRepository {
     public Dog getDogByName(String dogName) {
         ArrayList<Dog> result = new ArrayList<>();
 
-        for( Dog theDog: itsDogs)
-            if( theDog.getName().equalsIgnoreCase(dogName) ) {
+        for (Dog theDog : itsDogs)
+            if (theDog.getName().equalsIgnoreCase(dogName)) {
                 result.add(theDog);
             }
 
@@ -42,14 +42,13 @@ public class DogsRepositoryStub implements DogsRepository {
         }
 
 
-
         return result.get(0);
     }
 
-    Dog getDogByID(long id){
+    Dog getDogByID(long id) {
 
-        for(Dog dog:itsDogs){
-            if(dog.getId() == id){
+        for (Dog dog : itsDogs) {
+            if (dog.getId() == id) {
                 return dog;
             }
 
@@ -57,12 +56,25 @@ public class DogsRepositoryStub implements DogsRepository {
         return null;
     }
 
+    long updateDogDetails(Dog dog) {
+        for (int i = 0; i < itsDogs.size(); ++i)
+            if (itsDogs.get(i).getName().equalsIgnoreCase(dog.getName())) {
+                itsDogs.get(i).setId(dog.getId());
+                return dog.getId();
+            } else if (itsDogs.get(i).getId() == dog.getId()) {
+                itsDogs.get(i).setName(dog.getName());
+                return dog.getId();
+            }
+
+        return -1;
+    }
+
     @Override
     public List<Dog> findByName(Dog aDog) {
         ArrayList<Dog> result = new ArrayList<>();
 
-        for( Dog theDog: itsDogs)
-            if( theDog.getName().equalsIgnoreCase(aDog.getName()) ) {
+        for (Dog theDog : itsDogs)
+            if (theDog.getName().equalsIgnoreCase(aDog.getName())) {
                 result.add(theDog);
             }
 
@@ -74,14 +86,14 @@ public class DogsRepositoryStub implements DogsRepository {
         Dog retrievedDog = null;
         long result = -1;
 
-        for( Dog theDog: itsDogs)
-            if( theDog.getId() == aDog.getId()) {
+        for (Dog theDog : itsDogs)
+            if (theDog.getId() == aDog.getId()) {
                 retrievedDog = theDog;
-                retrievedDog.setName( aDog.getName() );
+                retrievedDog.setName(aDog.getName());
                 result = retrievedDog.getId();
                 break;
             }
-        if( retrievedDog == null )
+        if (retrievedDog == null)
             result = addDog(aDog);
 
         return result;
@@ -99,18 +111,16 @@ public class DogsRepositoryStub implements DogsRepository {
     }
 
     @Override
-    public  long count()
-    {
+    public long count() {
         return this.itsDogs.size();
     }
 
     @Override
-    public  boolean existsById( long id )
-    {
+    public boolean existsById(long id) {
         boolean result = false;
 
-        for( Dog theDog: itsDogs)
-            if(theDog.getId() == id ) {
+        for (Dog theDog : itsDogs)
+            if (theDog.getId() == id) {
                 result = true;
                 break;
             }
@@ -119,8 +129,7 @@ public class DogsRepositoryStub implements DogsRepository {
     }
 
     @Override
-    public  void    deleteAll()
-    {
+    public void deleteAll() {
         itsDogs.clear();
     }
 
