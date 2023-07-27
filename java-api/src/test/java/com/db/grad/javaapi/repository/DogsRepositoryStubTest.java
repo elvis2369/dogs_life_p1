@@ -47,6 +47,16 @@ class DogsRepositoryStubTest {
     }
 
     @Test
+    @DisplayName("Test getDogByID")
+    void getDogByID(){
+        Dog expectedDog = new Dog();
+        expectedDog.setName("Bruno");
+        expectedDog.setId(1);
+
+        Dog actualDog = dogsList.getDogByID(1);
+        assertEquals(expectedDog.getId(), actualDog.getId());
+    }
+    @Test
     void add_dog() {
         // arrange
         long expectedIndex = 1;

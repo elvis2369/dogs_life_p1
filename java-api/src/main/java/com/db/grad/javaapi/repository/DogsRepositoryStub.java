@@ -46,6 +46,17 @@ public class DogsRepositoryStub implements DogsRepository {
         return result.get(0);
     }
 
+    Dog getDogByID(long id){
+
+        for(Dog dog:itsDogs){
+            if(dog.getId() == id){
+                return dog;
+            }
+
+        }
+        return null;
+    }
+
     @Override
     public List<Dog> findByName(Dog aDog) {
         ArrayList<Dog> result = new ArrayList<>();
