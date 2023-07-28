@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS dogs;
+DROP TABLE IF EXISTS dog;
 
-CREATE TABLE dogs (
+CREATE TABLE dog (
     dog_id INT NOT NULL,
     name VARCHAR(250) NOT NULL,
     age INT NOT NULL

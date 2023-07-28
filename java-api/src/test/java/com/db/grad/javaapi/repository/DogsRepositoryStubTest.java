@@ -78,7 +78,7 @@ class DogsRepositoryStubTest {
         theDog.setName("Bruno");
 
         // act
-        long actualIndex = cut.save(theDog);
+        long actualIndex = cut.save(theDog).getId();
 
         // assert
         assertEquals(expectedIndex, actualIndex);
