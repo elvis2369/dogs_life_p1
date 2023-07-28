@@ -11,4 +11,5 @@ public interface HeroRepository extends JpaRepository<Hero, Integer> {
 
     @Query(nativeQuery = true, value = "select * from heroes where name like :letter")
     List<Hero> findHeroesNameStartingWithLetter(String letter);
+
 }

@@ -5,6 +5,7 @@ import com.example.superheroes.repository.HeroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
 
 @Service
@@ -25,6 +26,10 @@ public class HeroService {
 
     public List<Hero> getLastThreeHeroesByName(){
         return heroRepository.findTop3ByOrderByNameDesc();
+    }
+
+    public Hero saveHero(Hero hero){
+        return heroRepository.save(hero);
     }
 
 }
