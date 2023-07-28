@@ -122,6 +122,7 @@ public class DogsRepositoryStub implements DogsRepository {
         for (Dog theDog : itsDogs)
             if (theDog.getId() == id) {
                 result = true;
+                //exists by id
                 break;
             }
 
