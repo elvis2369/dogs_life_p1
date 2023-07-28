@@ -1,5 +1,6 @@
 package com.example.superheroes.practice;
 
+import com.example.superheroes.model.Hero;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 public class Calculator {
 
     public int addition(int num1, int num2){
+
         return num1+num2;
     }
 
