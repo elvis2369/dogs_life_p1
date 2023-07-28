@@ -5,14 +5,14 @@ import com.example.superheroes.practice.Calculator;
 import com.example.superheroes.repository.HeroRepository;
 import com.example.superheroes.service.HeroService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.List;
 
 @SpringBootApplication
-public class SuperheroesApplication implements CommandLineRunner {
+public class SuperheroesApplication {
 
 	//@Autowired
 	//Calculator calc;
@@ -28,8 +28,8 @@ public class SuperheroesApplication implements CommandLineRunner {
 		SpringApplication.run(SuperheroesApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
+	//@Override
+	//public void run(String... args) throws Exception {
 
 		//Calculator calculator = new Calculator();
 		//int result = calculator.addition(3,4);
@@ -40,9 +40,10 @@ public class SuperheroesApplication implements CommandLineRunner {
 		//for (Hero hero: heroes){
 			//System.out.println(hero);
 	//}
-		List<Hero> heroes = heroService.getHeroesStartingWithLetter("C");
-		for (Hero hero : heroes){
-			System.out.println(hero);
-		}
+		//List<Hero> heroes = heroService.getHeroesStartingWithLetter("C");
+		//for (Hero hero : heroes){
+		//	System.out.println(hero);
+		//}
 
-} }
+}
+//}
