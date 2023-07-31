@@ -1,12 +1,19 @@
 import React from 'react'
 import HeroDetail from './HeroDetail'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 
 const AllHeroes = () => {
     return (
-        heroes.map(hero=>(
-         <HeroDetail info={hero} key={hero.id.toString()} />
-        ))
-     )
+        <Row >
+          {heroes.map(hero => (
+              <div className='container' key={hero.id}>
+                <HeroDetail info={hero}/>
+              </div>
+            ))}
+        </Row>
+      )
 }
 const heroes = 
     [
