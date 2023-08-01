@@ -4,17 +4,15 @@ import com.example.superheroes.model.Hero;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import com.example.superheroes.service.HeroService;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins="http://localhost:3000")
 public class HeroController {
 
     @Autowired
