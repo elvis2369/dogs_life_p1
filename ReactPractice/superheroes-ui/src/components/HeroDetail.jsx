@@ -12,6 +12,7 @@ const HeroDetail = (props) => {
 
   const incrementCounter =()=>{
     setCounter(counter+1);
+    props.parentCount(props.info.alias);
   }
 
   return (
