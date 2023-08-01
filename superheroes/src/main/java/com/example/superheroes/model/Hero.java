@@ -1,10 +1,6 @@
 package com.example.superheroes.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 
 @Entity
@@ -34,6 +30,8 @@ public class Hero {
                 '}';
     }
 
+    @Id
+    @Column(name = "id", nullable = false)
     public int getId() {
         return id;
     }
@@ -42,6 +40,7 @@ public class Hero {
         this.id = id;
     }
 
+    @Column(name = "name", nullable = false)
     public String getName() {
         return name;
     }
@@ -50,6 +49,7 @@ public class Hero {
         this.name = name;
     }
 
+    @Column(name = "alias", nullable = false)
     public String getAlias() {
         return alias;
     }
@@ -58,6 +58,7 @@ public class Hero {
         this.alias = alias;
     }
 
+    @Column(name = "superpower", nullable = false)
     public String getSuperpower() {
         return superpower;
     }
@@ -66,6 +67,7 @@ public class Hero {
         this.superpower = superpower;
     }
 
+    @Column(name = "teamid", nullable = false)
     public int getTeamid() {
         return teamid;
     }

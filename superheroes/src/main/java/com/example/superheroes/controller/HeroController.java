@@ -3,10 +3,12 @@ package com.example.superheroes.controller;
 import com.example.superheroes.model.Hero;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import com.example.superheroes.service.HeroService;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins="http://localhost:3000")
 public class HeroController {
 
     @Autowired
@@ -32,7 +35,8 @@ public class HeroController {
     }
 
     @PostMapping("/heroes")
-    public HttpStatus saveNewHero(@RequestBody Hero hero){
+    public HttpStatus saveNewHero(@Valid  @RequestBody Hero hero){
+        System.out.println("---TEST POST---\n"+hero.getName()+" "+hero.getSuperpower());
         Hero result = heroService.saveHero(hero);
 
         if (result == null){
